@@ -21,12 +21,18 @@ jobs:
         with:
           go-version-file: "go.mod"
 
-      - name: Build (client and server)
-        run: |
-          go build -v ./client/...
-          go build -v ./server/...
+      - name: Build (client)
+        run: go build -v ./..
+        working-directory: ./client/
 
-      - name: Test (client and server)
-        run: |
-          go test -v ./client/...
-          go test -v ./server/...
+      - name: Build (server)
+        run: go build -v ./..
+        working-directory: ./server/
+
+      - name: Test (client)
+        run: go test -v ./..
+        working-directory: ./client/
+
+      - name: Test (server)
+        run: go test -v ./..
+        working-directory: ./server/
