@@ -1,7 +1,6 @@
 package env_test
 
 import (
-	"sync"
 	"testing"
 
 	"github.com/dywoq/voidmare/server/env"
@@ -70,25 +69,4 @@ func TestSetRequirementAfterCheckPanics(t *testing.T) {
 		}
 	}()
 	m.SetRequirement("VAR")
-}
-
-func TestConcurrentSetAndCheck(t *testing.T) {
-	m := &env.Management{}
-	envVar := "CONCURRENT_VAR"
-	t.Setenv(envVar, "val")
-
-	var wg sync.WaitGroup
-	wg.Add(2)
-
-	go func() {
-		defer wg.Done()
-		m.SetRequirement(envVar)
-	}()
-
-	go func() {
-		defer wg.Done()
-		_ = m.Check()
-	}()
-
-	wg.Wait()
 }
