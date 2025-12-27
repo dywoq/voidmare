@@ -16,5 +16,3 @@ func ClientSetup() error {
 	client = got
 	return nil
 }
-
-
