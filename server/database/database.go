@@ -15,7 +15,7 @@ func New() *Database {
 // Setup runs all steps that are needed to make database function normally.
 // Recommended to run before using it.
 func (d *Database) Setup() error {
-	if err := d.envSetup(); err != nil {
+	if err := d.setupEnv(); err != nil {
 		return err
 	}
 	return nil
@@ -35,7 +35,7 @@ func (d *Database) ApiKey() string {
 
 // related to setup
 
-func (d *Database) envSetup() error {
+func (d *Database) setupEnv() error {
 	d.env.SetRequirement("DATABASE_URL")
 	d.env.SetRequirement("DATABASE_API_KEY")
 	return d.env.Check()
