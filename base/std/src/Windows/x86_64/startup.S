@@ -4,11 +4,11 @@
 //
 // Module Description
 //
-// 		Starting routine of Windows x86_64
+// 		Initialization routine of Windows x86_64
 //
 
 .global mainCRTStartup
-.extern VOIDMAREStd_RuntimeStart
+.extern VOIDMAREStd_WindowsStart
 
 mainCRTStartup:
 
@@ -31,4 +31,4 @@ mainCRTStartup:
 	//
 
 	sub $40, %rsp
-	call VOIDMAREStd_RuntimeStart
+	call VOIDMAREStd_WindowsStart
