@@ -130,6 +130,64 @@ namespace Voidmare::Std::Integer
             m_Integer = Result;
             return Result;
         }
+
+        struct Limits
+        {
+            constexpr static IntegralT Minimum = 0;
+            constexpr static IntegralT Maximum = 1;
+        };
+    };
+
+    //
+    // Constant definitions of the IntegerBase::Limits structure
+    //
+
+    template <> struct IntegerBase<signed char>::Limits
+    {
+        constexpr static signed char Minimum = -128;
+        constexpr static signed char Maximum = 127;
+    };
+
+    template <> struct IntegerBase<signed short>::Limits
+    {
+        constexpr static signed short Minimum = -32768;
+        constexpr static signed short Maximum = 32767;
+    };
+
+    template <> struct IntegerBase<signed int>::Limits
+    {
+        constexpr static signed int Minimum = -2147483648;
+        constexpr static signed int Maximum = 2147483647;
+    };
+
+    template <> struct IntegerBase<signed long long>::Limits
+    {
+        constexpr static signed long long Minimum = -9223372036854775807LL - 1;
+        constexpr static signed long long Maximum = 9223372036854775807LL;
+    };
+
+    template <> struct IntegerBase<unsigned char>::Limits
+    {
+        constexpr static unsigned char Minimum = 0;
+        constexpr static unsigned char Maximum = 255;
+    };
+
+    template <> struct IntegerBase<unsigned short>::Limits
+    {
+        constexpr static unsigned short Minimum = 0;
+        constexpr static unsigned short Maximum = 65535;
+    };
+
+    template <> struct IntegerBase<unsigned int>::Limits
+    {
+        constexpr static unsigned int Minimum = 0;
+        constexpr static unsigned int Maximum = 4294967295U;
+    };
+
+    template <> struct IntegerBase<unsigned long long>::Limits
+    {
+        constexpr static unsigned long long Minimum = 0;
+        constexpr static unsigned long long Maximum = 18446744073709551615ULL;
     };
 
     //
