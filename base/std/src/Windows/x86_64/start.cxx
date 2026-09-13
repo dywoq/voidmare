@@ -9,7 +9,7 @@
 
 #include <windows.h>
 
-extern "C" void VOIDMAREStd_WindowsStart()
+extern "C" void VOIDMAREStd___WindowsStart()
 {
     extern void Main();
     Main();

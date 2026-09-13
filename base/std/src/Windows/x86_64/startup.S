@@ -8,7 +8,7 @@
 //
 
 .global mainCRTStartup
-.extern VOIDMAREStd_WindowsStart
+.extern VOIDMAREStd___WindowsStart
 
 mainCRTStartup:
 
@@ -31,4 +31,4 @@ mainCRTStartup:
 	//
 
 	sub $40, %rsp
-	call VOIDMAREStd_WindowsStart
+	call VOIDMAREStd___WindowsStart
