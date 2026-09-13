@@ -81,13 +81,13 @@ namespace Voidmare::Std::Integer
         //
         // Routine Description
         //
-        // 		Takes the provided value from the underlying integer.
+        // 		Subtracts the provided value from the underlying integer.
         //
         // Return
         //
         // 		Calculation result.
         //
-        constexpr IntegralT Minus(IntegralT Value) noexcept
+        constexpr IntegralT Subtract(IntegralT Value) noexcept
         {
             IntegralT Result = m_Integer - Value;
             m_Integer = Result;
