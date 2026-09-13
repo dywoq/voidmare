@@ -112,6 +112,7 @@ namespace Voidmare::Std::Integer
             return Result;
         }
 
+        //
         // Routine Description
         //
         // 		Multiplies the underlying integer by the provided value.
@@ -127,6 +128,19 @@ namespace Voidmare::Std::Integer
             return Result;
         }
     };
+
+    //
+    // Type wrappers around integral types
+    //
+
+    using Int8 = IntegerBase<signed char>;
+    using Int16 = IntegerBase<signed short>;
+    using Int32 = IntegerBase<signed int>;
+    using Int64 = IntegerBase<signed long long>;
+    using UInt8 = IntegerBase<unsigned char>;
+    using UInt16 = IntegerBase<unsigned short>;
+    using UInt32 = IntegerBase<unsigned int>;
+    using UInt64 = IntegerBase<unsigned long long>;
 
     namespace Literals
     {
