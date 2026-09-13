@@ -4,13 +4,13 @@
 //
 // Module Description
 //
-// 		Constraints, replace type traits from the official C++ standard
-// 		library
+// 		Constraints that replace type traits from the official C++ standard library
 //
 
 #ifndef _VOIDMARE_STD_CONSTRAINTS_HXX
 #define _VOIDMARE_STD_CONSTRAINTS_HXX
 
+#include <winscard.h>
 namespace Voidmare::Std::Constraints
 {
     namespace Internal
@@ -55,6 +55,17 @@ namespace Voidmare::Std::Constraints
         template <> struct UnsignedIntegralConstraint<unsigned long long> : BoolConstant<true>
         {
         };
+
+        //
+        // Same-as
+        //
+
+        template <typename T, typename U> struct SameAsConstraint : BoolConstant<false>
+        {
+        };
+        template <typename T> struct SameAsConstraint<T, T> : BoolConstant<true>
+        {
+        };
     } // namespace Internal
 
     template <typename T>
@@ -65,6 +76,9 @@ namespace Voidmare::Std::Constraints
 
     template <typename T>
     concept IntegralConstraint = SignedIntegralConstraint<T> || UnsignedIntegralConstraint<T>;
+
+    template <typename T, typename U>
+    concept SameAsConstraint = Internal::SameAsConstraint<T, U>::IsValid;
 } // namespace Voidmare::Std::Constraints
 
 #endif
