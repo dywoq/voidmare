@@ -10,6 +10,8 @@
 #ifndef _VOIDMARE_STD_INTEGER_HXX
 #define _VOIDMARE_STD_INTEGER_HXX
 
+#include <voidmare/std/constraints.hxx>
+
 namespace Voidmare::Std::Integer
 {
     //
@@ -20,10 +22,13 @@ namespace Voidmare::Std::Integer
     //
     template <typename IntegralT> class IntegerBase
     {
+
         //
-        // TODO: When the standard library will have support of type traits,
-        // add a compile time assertion that checks if IntegralT is integral type.
+        // Routine checks
         //
+
+        static_assert(Constraints::IntegralConstraint<IntegralT>, "The provided type is not integral");
+
       private:
         IntegralT m_Integer;
 
