@@ -141,43 +141,6 @@ namespace Voidmare::Std::Integer
     using UInt16 = IntegerBase<unsigned short>;
     using UInt32 = IntegerBase<unsigned int>;
     using UInt64 = IntegerBase<unsigned long long>;
-
-    namespace Literals
-    {
-        constexpr IntegerBase<signed char> operator""_Int8(unsigned long long Value)
-        {
-            return IntegerBase(static_cast<signed char>(Value));
-        }
-        constexpr IntegerBase<signed short> operator""_Int16(unsigned long long Value)
-        {
-            return IntegerBase(static_cast<signed short>(Value));
-        }
-        constexpr IntegerBase<signed int> operator""_Int32(unsigned long long Value)
-        {
-            return IntegerBase(static_cast<signed int>(Value));
-        }
-        constexpr IntegerBase<signed long long> operator""_Int64(unsigned long long Value)
-        {
-            return IntegerBase(static_cast<signed long long>(Value));
-        }
-
-        constexpr IntegerBase<unsigned char> operator""_UInt8(unsigned long long Value)
-        {
-            return IntegerBase(static_cast<unsigned char>(Value));
-        }
-        constexpr IntegerBase<unsigned short> operator""_UInt16(unsigned long long Value)
-        {
-            return IntegerBase(static_cast<unsigned short>(Value));
-        }
-        constexpr IntegerBase<unsigned int> operator""_UInt32(unsigned long long Value)
-        {
-            return IntegerBase(static_cast<unsigned int>(Value));
-        }
-        constexpr IntegerBase<unsigned long long> operator""_UInt64(unsigned long long Value)
-        {
-            return IntegerBase(Value);
-        }
-    } // namespace Literals
 } // namespace Voidmare::Std::Integer
 
 #endif
