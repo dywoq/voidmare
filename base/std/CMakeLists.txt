@@ -21,6 +21,6 @@ target_compile_options(${PROJECT_NAME}
 	PUBLIC --std=c++20 -fno-rtti -fno-exceptions -nostdlib
 )
 target_include_directories(${PROJECT_NAME}
-	PUBLIC -Iinclude/
-	PRIVATE -Isrc/include/
+	PUBLIC include/
+	PRIVATE src/include/
 )
