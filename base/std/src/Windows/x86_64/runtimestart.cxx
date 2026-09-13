@@ -7,6 +7,11 @@
 // 		Starting routine of Windows x86_64
 //
 
-extern "C" void mainCRTStartup()
+#include <windows.h>
+
+extern "C" void VOIDMAREStd_RuntimeStart()
 {
+    extern void Main();
+    Main();
+    ExitProcess(1);
 }
