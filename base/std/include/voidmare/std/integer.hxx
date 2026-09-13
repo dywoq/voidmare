@@ -98,7 +98,6 @@ namespace Voidmare::Std::Integer
         // Routine Description
         //
         // 		Divides the underlying integer by the provided value.
-        // 		Compilation process fails if the provided value is 0.
         //
         // Return
         //
@@ -106,7 +105,6 @@ namespace Voidmare::Std::Integer
         //
         constexpr IntegralT Divide(IntegralT Value) noexcept
         {
-            static_assert(Value != 0, "division by zero is forbidden");
             IntegralT Result = m_Integer / Value;
             m_Integer = Result;
             return Result;
