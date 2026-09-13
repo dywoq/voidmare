@@ -20,16 +20,10 @@ extern "C" void VoidmareStd___WindowsStart()
     //
 
     //
-    // Call the main function.
-    //
-
-    extern void Main();
-    Main();
-
-    //
     // Exit the process
     //
 
-    auto ExitCode = IntegerBase<UINT>(0);
+    extern unsigned int ProgramEntry();
+    auto ExitCode = IntegerBase<UINT>(ProgramEntry());
     ExitProcess(ExitCode.Value());
 }
