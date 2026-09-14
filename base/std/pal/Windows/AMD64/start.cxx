@@ -7,13 +7,12 @@
 // 		Starting routine of Windows x86_64
 //
 
-#include <voidmare/std/integer.hxx>
+#include <voidmare/std/integer/base.hxx>
 #include <windows.h>
 
 extern "C" void VoidmareStd___WindowsStart()
 {
-    using namespace Voidmare;
-    using namespace Std::Integer;
+    using namespace Voidmare::Std;
 
     //
     // Initialization routine
@@ -24,6 +23,6 @@ extern "C" void VoidmareStd___WindowsStart()
     //
 
     extern unsigned int ProgramEntry();
-    auto ExitCode = IntegerBase<UINT>(ProgramEntry());
-    ExitProcess(ExitCode.Value());
+    auto ExitCode = Integer::Base<UINT>(ProgramEntry());
+    ExitProcess(ExitCode);
 }

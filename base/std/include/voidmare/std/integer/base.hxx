@@ -4,11 +4,11 @@
 //
 // Module Description
 //
-// 		Functionality related to integers
+// 		Base integer class
 //
 
-#ifndef _VOIDMARE_STD_INTEGER_HXX
-#define _VOIDMARE_STD_INTEGER_HXX
+#ifndef _VOIDMARE_STD_INTEGER_BASE_HXX
+#define _VOIDMARE_STD_INTEGER_BASE_HXX
 
 #include <voidmare/std/constraints/integral/general.hxx>
 
@@ -20,14 +20,14 @@ namespace Voidmare::Std::Integer
     // 		This class is a unified way to manage integers at compile time.
     // 		It provides a rich set of functionality.
     //
-    template <Constraints::Integral IntegralT> class IntegerBase
+    template <Constraints::Integral IntegralT> class Base
     {
 
       private:
         IntegralT m_Integer;
 
       public:
-        constexpr IntegerBase(IntegralT ProvidedInteger) noexcept : m_Integer(ProvidedInteger)
+        constexpr Base(IntegralT ProvidedInteger) noexcept : m_Integer(ProvidedInteger)
         {
         }
 
@@ -161,66 +161,53 @@ namespace Voidmare::Std::Integer
     // Constant definitions of the IntegerBase::Limits structure
     //
 
-    template <> struct IntegerBase<signed char>::Limits
+    template <> struct Base<signed char>::Limits
     {
         constexpr static signed char Minimum = -128;
         constexpr static signed char Maximum = 127;
     };
 
-    template <> struct IntegerBase<signed short>::Limits
+    template <> struct Base<signed short>::Limits
     {
         constexpr static signed short Minimum = -32768;
         constexpr static signed short Maximum = 32767;
     };
 
-    template <> struct IntegerBase<signed int>::Limits
+    template <> struct Base<signed int>::Limits
     {
         constexpr static signed int Minimum = -2147483648;
         constexpr static signed int Maximum = 2147483647;
     };
 
-    template <> struct IntegerBase<signed long long>::Limits
+    template <> struct Base<signed long long>::Limits
     {
         constexpr static signed long long Minimum = -9223372036854775807LL - 1;
         constexpr static signed long long Maximum = 9223372036854775807LL;
     };
 
-    template <> struct IntegerBase<unsigned char>::Limits
+    template <> struct Base<unsigned char>::Limits
     {
         constexpr static unsigned char Minimum = 0;
         constexpr static unsigned char Maximum = 255;
     };
 
-    template <> struct IntegerBase<unsigned short>::Limits
+    template <> struct Base<unsigned short>::Limits
     {
         constexpr static unsigned short Minimum = 0;
         constexpr static unsigned short Maximum = 65535;
     };
 
-    template <> struct IntegerBase<unsigned int>::Limits
+    template <> struct Base<unsigned int>::Limits
     {
         constexpr static unsigned int Minimum = 0;
         constexpr static unsigned int Maximum = 4294967295U;
     };
 
-    template <> struct IntegerBase<unsigned long long>::Limits
+    template <> struct Base<unsigned long long>::Limits
     {
         constexpr static unsigned long long Minimum = 0;
         constexpr static unsigned long long Maximum = 18446744073709551615ULL;
     };
-
-    //
-    // Type wrappers around integral types
-    //
-
-    using Int8 = IntegerBase<signed char>;
-    using Int16 = IntegerBase<signed short>;
-    using Int32 = IntegerBase<signed int>;
-    using Int64 = IntegerBase<signed long long>;
-    using UInt8 = IntegerBase<unsigned char>;
-    using UInt16 = IntegerBase<unsigned short>;
-    using UInt32 = IntegerBase<unsigned int>;
-    using UInt64 = IntegerBase<unsigned long long>;
 } // namespace Voidmare::Std::Integer
 
 #endif
