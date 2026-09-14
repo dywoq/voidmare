@@ -4,7 +4,7 @@
 //
 // Module Description
 //
-// 		Signed integral constraint
+// 		Unsigned integral constraint
 //
 
 #ifndef _VOIDMARE_STD_CONSTRAINTS_INTEGRAL_UNSIGNED_HXX

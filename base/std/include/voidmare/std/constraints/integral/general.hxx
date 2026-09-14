@@ -4,7 +4,7 @@
 //
 // Module Description
 //
-// 		Signed integral constraint
+//		Integral constraint that combines signed and unsigned integral constraints
 //
 
 #ifndef _VOIDMARE_STD_CONSTRAINTS_INTEGRAL_GENERAL_HXX

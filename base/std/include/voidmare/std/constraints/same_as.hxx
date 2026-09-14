@@ -4,7 +4,7 @@
 //
 // Module Description
 //
-// 		Signed integral constraint
+// 		"Same as" constraint
 //
 
 #ifndef _VOIDMARE_STD_CONSTRAINTS_SAME_AS_HXX
