@@ -134,6 +134,20 @@ namespace Voidmare::Std::Integer
         //
         // Routine Description
         //
+        // 		Provides the absolute value of the underlying integer.
+        //
+        constexpr IntegralT Absolute()
+        {
+            if (m_Integer >= 0)
+            {
+                return m_Integer;
+            }
+            return -m_Integer;
+        }
+
+        //
+        // Routine Description
+        //
         // 		This structure specifies numeric limits of the provided integral type,
         // 		such as its minimum and maximum value.
         //
