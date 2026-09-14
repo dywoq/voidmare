@@ -20,14 +20,8 @@ namespace Voidmare::Std::Integer
     // 		This class is an unified way to manage integers at compile time,
     // 		providing a rich set of functionality.
     //
-    template <typename IntegralT> class IntegerBase
+    template <Constraints::IntegralConstraint IntegralT> class IntegerBase
     {
-
-        //
-        // Routine checks
-        //
-
-        static_assert(Constraints::IntegralConstraint<IntegralT>, "The provided type is not integral");
 
       private:
         IntegralT m_Integer;
