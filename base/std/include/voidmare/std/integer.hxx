@@ -10,7 +10,7 @@
 #ifndef _VOIDMARE_STD_INTEGER_HXX
 #define _VOIDMARE_STD_INTEGER_HXX
 
-#include <voidmare/std/constraints.hxx>
+#include <voidmare/std/constraints/integral/general.hxx>
 
 namespace Voidmare::Std::Integer
 {
@@ -20,7 +20,7 @@ namespace Voidmare::Std::Integer
     // 		This class is a unified way to manage integers at compile time.
     // 		It provides a rich set of functionality.
     //
-    template <Constraints::IntegralConstraint IntegralT> class IntegerBase
+    template <Constraints::Integral IntegralT> class IntegerBase
     {
 
       private:
