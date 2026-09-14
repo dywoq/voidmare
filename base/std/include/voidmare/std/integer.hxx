@@ -17,8 +17,8 @@ namespace Voidmare::Std::Integer
     //
     // Routine Description
     //
-    // 		This class is an unified way to manage integers at compile time,
-    // 		providing a rich set of functionality.
+    // 		This class is a unified way to manage integers at compile time.
+    // 		It provides a rich set of functionality.
     //
     template <Constraints::IntegralConstraint IntegralT> class IntegerBase
     {
@@ -27,7 +27,7 @@ namespace Voidmare::Std::Integer
         IntegralT m_Integer;
 
       public:
-        constexpr explicit IntegerBase(IntegralT ProvidedInteger) noexcept : m_Integer(ProvidedInteger)
+        constexpr IntegerBase(IntegralT ProvidedInteger) noexcept : m_Integer(ProvidedInteger)
         {
         }
 
@@ -150,6 +150,11 @@ namespace Voidmare::Std::Integer
             constexpr static IntegralT Minimum = 0;
             constexpr static IntegralT Maximum = 0;
         };
+
+        operator IntegralT() const
+        {
+            return m_Integer;
+        }
     };
 
     //
