@@ -4,7 +4,7 @@
 //
 // Module Description
 //
-// 		Starting routine of Windows x86_64
+// 		Starting routine of Windows AMD64
 //
 
 #include <voidmare/std/integer/base.hxx>

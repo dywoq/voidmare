@@ -4,7 +4,7 @@
 //
 // Module Description
 //
-// 		Initialization routine of Windows x86_64
+// 		Initialization routine of Windows AMD64
 //
 
 .global mainCRTStartup
