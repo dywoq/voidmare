@@ -22,6 +22,7 @@ namespace Voidmare::Std::Status
     {
         None = 0,
         Memory,
+        PalMemory
     };
 } // namespace Voidmare::Std::Status
 

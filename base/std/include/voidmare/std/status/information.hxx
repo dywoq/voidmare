@@ -29,6 +29,16 @@ namespace Voidmare::Std::Status
             : CurrentSourceIndex(ProvidedSourceIndex), CurrentErrorCode(ProvidedErrorCode)
         {
         }
+
+        //
+        // Routine Description
+        //
+        // 		Checks if CurrentErrorCode is 0.
+        //
+        constexpr operator bool()
+        {
+            return CurrentErrorCode == 0;
+        }
     };
 } // namespace Voidmare::Std::Status
 
