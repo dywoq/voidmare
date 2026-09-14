@@ -131,10 +131,16 @@ namespace Voidmare::Std::Integer
             return Result;
         }
 
+        //
+        // Routine Description
+        //
+        // 		This structure specifies numeric limits of the provided integral type,
+        // 		such as its minimum and maximum value.
+        //
         struct Limits
         {
             constexpr static IntegralT Minimum = 0;
-            constexpr static IntegralT Maximum = 1;
+            constexpr static IntegralT Maximum = 0;
         };
     };
 
