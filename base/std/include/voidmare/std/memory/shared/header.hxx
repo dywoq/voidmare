@@ -27,6 +27,16 @@ namespace Voidmare::Std::Memory::Shared
             : VirtualAddress(ProvidedVirtualAddress), RequestedSize(ProvidedRequestedSize)
         {
         }
+
+        //
+        // Routine Description
+        //
+        // 		Converts the current virtual address to T pointer. This function does not work at compile time.
+        //
+        template <typename T> T *VirtualAddressToPointer()
+        {
+            return (T *)VirtualAddress.Value();
+        }
     };
 } // namespace Voidmare::Std::Memory::Shared
 
